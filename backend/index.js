@@ -277,7 +277,7 @@ app.post("/signup", async (req, res) => {
     // Issue JWT on signup
     const token = jwt.sign(
       { id: user._id, username: user.username },
-      "mypassword",
+      process.env.JWT_SCERET,
       { expiresIn: "1d" }
     );
     res.json({
@@ -305,7 +305,7 @@ app.post("/login", async (req, res) => {
     }
     const token = jwt.sign(
       { id: user._id, username: user.username },
-      "mypassword",
+      process.env.JWT_SCERET,
       { expiresIn: "1d" }
     );
     res.json({
@@ -361,7 +361,7 @@ function authenticateToken(req, res, next) {
 
   if (!token) return res.status(401).json({ message: "No token provided" });
 
-  jwt.verify(token, "mypassword", (err, user) => {
+  jwt.verify(token, process.env.JWT_SCERET, (err, user) => {
     if (err) return res.status(403).json({ message: "Invalid token" });
     req.user = user;
     next();
