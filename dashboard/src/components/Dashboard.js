@@ -17,6 +17,12 @@ import ProtectedRoute from "./ProtectedRoute";
 
 
 const Dashboard = () => {
+  useEffect(() => {
+  const token = localStorage.getItem("token");
+  if (!token) {
+    window.location.href = "/login"; // go back if unauthenticated
+  }
+}, []);
   // const { username, email } = useParams();
   // const [user, setUser] = useState(null);
 
