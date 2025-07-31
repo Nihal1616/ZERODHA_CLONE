@@ -24,7 +24,7 @@ const jwt = require("jsonwebtoken");
 const app = express();
 
 const corsOptions = {
-  origin: ["http://localhost:3000", "http://localhost:3001"], // your frontend origin
+  origin: ["https://zerodha-clone-pi-mauve.vercel.app", "https://zerodha-clone-5drm.vercel.app"], // your frontend origin
   credentials: true, // allow credentials (cookies, authorization headers, etc.)
 };
 app.use(cors(corsOptions));
@@ -314,7 +314,7 @@ app.post("/login", async (req, res) => {
       user: {
         username: user.username,
         email: user.email,
-        redirectUrl: "http://localhost:3001/dashboard",
+        redirectUrl: "https://zerodha-clone-5drm.vercel.app/dashboard",
       },
     });
   } catch (err) {

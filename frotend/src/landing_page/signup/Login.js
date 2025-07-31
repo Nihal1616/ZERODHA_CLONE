@@ -37,7 +37,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:3002/login",
+        "https://zerodha-clone-dsd9.vercel.app/login",
         {
           ...inputValue,
         },
@@ -62,7 +62,7 @@ const Login = () => {
             
           // redirect to another frontend
             // navigate(`/dashboard/${decoded.username}/${decoded.email}`);
-            window.location.href = `http://localhost:3001?token=${token}`; 
+            window.location.href = `https://zerodha-clone-5drm.vercel.app?token=${token}`; 
           // }
           // navigate("http://localhost:3001/");
         }, 1000);
