@@ -1,4 +1,55 @@
+// import React from "react";
 
+// function LoginIn() {
+//   return (
+//     <div className="container">
+//       <div class="row mt-3">
+//         <h3 class="col-6 offset-3 mt-3 mb-3">Login</h3>
+//         <div class="col-6 offset-3">
+//           <form
+//             action="/login"
+//             method="post"
+//             class="needs-validation"
+//             novalidate
+//           >
+//             <div class="mb-3">
+//               <label for="username" class="form-label">
+//                 Username
+//               </label>
+//               <input
+//                 name="username"
+//                 id="username"
+//                 type="text"
+//                 class="form-control"
+//                 required
+//               />
+//             </div>
+
+//             <div class="mb-3">
+//               <label for="password" class="form-label">
+//                 Password
+//               </label>
+//               <input
+//                 name="password"
+//                 id="password"
+//                 type="password"
+//                 class="form-control"
+//                 required
+//               />
+//             </div>
+//             <div className="text-center mb-5 mt-3">
+//                 <button class="btn btn-success" style={{width:"30%"}}>Login</button>
+
+//             </div>
+            
+//           </form>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default LoginIn;
 
 
 
@@ -52,18 +103,10 @@ const Login = () => {
         localStorage.setItem("username", decoded.username);
         localStorage.setItem("email", decoded.email);
         localStorage.setItem("userId", decoded.userId);
-        // const decoded = jwtDecode(token);
-
         setTimeout(() => {
           // if (e.data.success) {
-          //storing the token
-            // localStorage.setItem("token", token);
-            
-            
-          // redirect to another frontend
-            // navigate(`/dashboard/${decoded.username}/${decoded.email}`);
-            window.location.href = `https://zerodha-clone-5drm.vercel.app`;
- 
+            // redirect to another frontend
+            window.location.href = "http://localhost:3001/"; 
           // }
           // navigate("http://localhost:3001/");
         }, 1000);
