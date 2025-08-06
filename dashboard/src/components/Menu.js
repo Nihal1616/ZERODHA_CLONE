@@ -63,7 +63,7 @@ const Menu = () => {
   const handleLogout = () => {
   localStorage.removeItem("token");   // Remove JWT token
   localStorage.removeItem("username"); // optional if stored
-  window.location.href = "http://localhost:3000/login";  //redirect to login page 
+  window.location.href = "https://zerodha-clone-pi-mauve.vercel.app/login";  //redirect to login page 
 };
 
   const menuClass = "menu";
