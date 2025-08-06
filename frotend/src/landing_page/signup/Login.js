@@ -106,7 +106,7 @@ const Login = () => {
         setTimeout(() => {
           // if (e.data.success) {
             // redirect to another frontend
-            window.location.href = "http://localhost:3001/"; 
+            window.location.href = "https://zerodha-clone-5drm.vercel.app"; 
           // }
           // navigate("http://localhost:3001/");
         }, 1000);
