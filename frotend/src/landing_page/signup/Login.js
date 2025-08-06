@@ -62,7 +62,7 @@ const Login = () => {
             
           // redirect to another frontend
             // navigate(`/dashboard/${decoded.username}/${decoded.email}`);
-            window.location.href = `https://zerodha-clone-5drm.vercel.app/dashboard?token=${token}`;
+            window.location.href = `https://zerodha-clone-5drm.vercel.app`;
  
           // }
           // navigate("http://localhost:3001/");
