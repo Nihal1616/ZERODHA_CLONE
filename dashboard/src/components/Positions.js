@@ -13,12 +13,10 @@ const Positions = () => {
   
   
     useEffect(()=>{
-      axios
-        .get("https://zerodha-clone-dsd9.vercel.app/allpositions")
-        .then((res) => {
-          console.log(res.data);
-          setAllPositions(res.data);
-        });
+      axios.get("http://localhost:3002/allpositions").then((res) => {
+        console.log(res.data);
+        setAllPositions(res.data);
+      });
   
     },[])
 

@@ -1,70 +1,4 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
 
-// function SignUP() {
-//   return (
-//     <div className="container">
-//       <div class="row mt-3 mb-5 ">
-//         <h3 class="col-6 offset-3 mb-5 text-center mt-3 mb-3">Sign Up</h3>
-//         <div class="col-6 offset-3">
-//           <form
-//             action="/signup"
-//             method="post"
-//             class="needs-validation"
-//             novalidate
-//           >
-//             <div class="mb-3">
-//               <label for="username" class="form-label">
-//                 Username
-//               </label>
-//               <input
-//                 name="username"
-//                 id="username"
-//                 type="text"
-//                 class="form-control"
-//                 required
-//               />
-//               <div class="valid-feedback">Looks good!</div>
-//             </div>
-//             <div class="mb-3">
-//               <label for="email" class="form-label">
-//                 Email
-//               </label>
-//               <input
-//                 name="email"
-//                 id="email"
-//                 type="email"
-//                 class="form-control"
-//                 required
-//               />
-//             </div>
-//             <div class="mb-3">
-//               <label for="password" class="form-label">
-//                 Password
-//               </label>
-//               <input
-//                 name="password"
-//                 id="password"
-//                 type="password"
-//                 class="form-control"
-//                 required
-//               />
-//             </div>
-//             <div className="text-center mt-5 mb-3">
-//                 <button class="p-2 btn btn-success " style={{width:"30%"}}>SignUp</button>
-
-//             </div>
-
-//             <h5 className="fs-6 text-center">Already have an account?<Link to="/login"><a href="">Login In</a> </Link> </h5>
-            
-//           </form>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default SignUP;
 
 
 
@@ -104,7 +38,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://zerodha-clone-dsd9.vercel.app/signup",
+        "http://localhost:3002/signup",
         {
           ...inputValue,
         },
@@ -120,7 +54,7 @@ const Signup = () => {
           localStorage.setItem("token", token);
         }
         setTimeout(() => {
-          navigate("/dashboard");
+          navigate("/login");
         }, 1000);
       } else {
         handleError(message);
@@ -129,6 +63,7 @@ const Signup = () => {
       if (error.response && error.response.data && error.response.data.message) {
         handleError(error.response.data.message);
       } else {
+        console.log(error)
         handleError("Signup failed");
       }
     }
@@ -154,7 +89,7 @@ const Signup = () => {
           />
         </div>
         <div>
-          <label htmlFor="email">Username</label>
+          <label htmlFor="username">Username</label>
           <input
             type="text"
             name="username"

@@ -23,44 +23,7 @@ const Dashboard = () => {
     window.location.href = "/login"; // go back if unauthenticated
   }
 }, []);
-  // const { username, email } = useParams();
-  // const [user, setUser] = useState(null);
 
-  // useEffect(() => {
-  //   const fetchUser = async () => {
-  //     const token = localStorage.getItem("token");
-
-  //     if (!token) {
-  //       window.location.href = "http://localhost:3000/login";
-  //       return;
-  //     }
-
-  //     try {
-  //       const res = await axios.get("http://localhost:3002/getUser", {
-  //         headers: {
-  //           Authorization: `Bearer ${token}`,
-  //         },
-  //       });
-
-  //       if (
-  //         res.data.user.username !== username ||
-  //         res.data.user.email !== email
-  //       ) {
-  //         alert("Access denied.");
-  //         window.location.href = "http://localhost:3000/login";
-  //       } else {
-  //         setUser(res.data.user);
-  //       }
-  //     } catch (err) {
-  //       console.error("Error verifying user", err.message);
-  //       window.location.href = "http://localhost:3000/login";
-  //     }
-  //   };
-
-  //   fetchUser();
-  // }, [username, email]);
-
-  // if (!user) return <div>Loading...</div>;
   const username = localStorage.getItem("username");
 
   return (
@@ -85,3 +48,6 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+
+
