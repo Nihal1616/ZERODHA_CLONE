@@ -45,7 +45,7 @@ const Login = () => {
 
     try {
       const { data } = await axios.post(
-        `${API_BASE_URL}/login`,
+        `${process.env.API_BASE_URL}/login`,
         { ...inputValue },
         { withCredentials: true }
       );
@@ -68,7 +68,7 @@ const Login = () => {
         }
 
         setTimeout(() => {
-          window.location.href = `${DASHBOARD_URL}?token=${encodeURIComponent(
+          window.location.href = `${process.env.DASHBOARD_URL}?token=${encodeURIComponent(
             token
           )}`;
         }, 1000);
