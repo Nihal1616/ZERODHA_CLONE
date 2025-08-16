@@ -23,10 +23,21 @@ const jwt = require("jsonwebtoken");
 
 const app = express();
 
+const FRONTEND_URL =
+  process.env.REACT_APP_FRONTEND_URL || "http://localhost:3000";
+const DASHBOARD_URL =
+  process.env.REACT_APP_DASHBOARD_URL || "http://localhost:3001";
+
+
 const corsOptions = {
   // origin: ["https://zerodha-clone-pi-mauve.vercel.app", "https://zerodha-clone-5drm.vercel.app"], // your frontend origin
   // origin: ["http://localhost:3000", "http://localhost:3001"], // your frontend origin
-  origin: ["*", "http://localhost:3000", "http://localhost:3001"],
+  origin: [
+    `${DASHBOARD_URL}`,
+    `${FRONTEND_URL}`,
+    "http://localhost:3000",
+    "http://localhost:3001",
+  ],
 
   credentials: true, // allow credentials (cookies, authorization headers, etc.)
 };
