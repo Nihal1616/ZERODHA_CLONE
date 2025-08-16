@@ -9,6 +9,8 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import './Style.css'
 
+
+const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:3002";
 const Signup = () => {
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState({

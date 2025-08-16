@@ -11,11 +11,13 @@ const { HoldingsModel } = require("./model/HoldingsModel");
 const { PositionsModel } = require("./model/PositionsModel");
 const { OrdersModel } = require("./model/OrdersModel");
 const cookieParser = require("cookie-parser");
+
 // const authRoute = require("./Routes/AuthRoute");
 
 const PORT = 3002;
 const uri = process.env.MONGO_URL;
-const JWT_SCERET=process.env.JWT_SCERET;
+const JWT_SECRET = process.env.JWT_SECRET;
+
 // const connectDB=require('./db');
 const User = require("./model/UserModel");
 const jwt = require("jsonwebtoken");
@@ -33,8 +35,8 @@ const corsOptions = {
   // origin: ["https://zerodha-clone-pi-mauve.vercel.app", "https://zerodha-clone-5drm.vercel.app"], // your frontend origin
   // origin: ["http://localhost:3000", "http://localhost:3001"], // your frontend origin
   origin: [
-    `${DASHBOARD_URL}`,
-    `${FRONTEND_URL}`,
+    process.env.DASHBOARD_URL,
+    process.env.FRONTEND_URL,
     "http://localhost:3000",
     "http://localhost:3001",
   ],
