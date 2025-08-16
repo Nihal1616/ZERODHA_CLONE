@@ -236,13 +236,12 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    app.listen(3002, () => console.log("Server running on port 3002"));
+    app.listen(3002, () =>
+       console.log("Server running on port 3002"));
+    res.send("working");
   })
   .catch((err) => console.error("MongoDB connection error:", err));
-
-app.listen(PORT, () => {
-  console.log("App started!");
   
-});
+
 
 
