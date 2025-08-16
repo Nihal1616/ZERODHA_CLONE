@@ -9,11 +9,12 @@ const Positions = () => {
 
   const [allpositions, setAllPositions]=useState([]);
   const username = localStorage.getItem("username");
+  const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:3002";
   
   
   
     useEffect(()=>{
-      axios.get("http://localhost:3002/allpositions").then((res) => {
+      axios.get(`${API_BASE_URL}/allpositions`).then((res) => {
         console.log(res.data);
         setAllPositions(res.data);
       });

@@ -9,6 +9,12 @@ import  {jwtDecode}  from "jwt-decode";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
+
+const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:3002";
+const DASHBOARD_URL =
+  process.env.REACT_APP_DASHBOARD_URL || "http://localhost:3001";
+
+
 const Login = () => {
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState({
@@ -39,7 +45,7 @@ const Login = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:3002/login",
+        `${API_BASE_URL}/login`,
         { ...inputValue },
         { withCredentials: true }
       );
@@ -62,7 +68,7 @@ const Login = () => {
         }
 
         setTimeout(() => {
-          window.location.href = `http://localhost:3001?token=${encodeURIComponent(
+          window.location.href = `${DASHBOARD_URL}?token=${encodeURIComponent(
             token
           )}`;
         }, 1000);

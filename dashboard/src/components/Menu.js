@@ -11,6 +11,9 @@ const Menu = () => {
   const [isProfileDropdowmOpen, setIsProfileDropdowmOpen] = useState(false);
   const [username,setUsername]=useState("User");
   const tokenn = localStorage.getItem("token");
+
+  const FRONTEND_URL =
+    process.env.REACT_APP_FRONTEND_URL || "http://localhost:3000";
   // const username = localStorage.getItem("username");
 
   useEffect(() => {
@@ -63,7 +66,7 @@ const Menu = () => {
   const handleLogout = () => {
   localStorage.removeItem("token");   // Remove JWT token
   localStorage.removeItem("username"); // optional if stored
-  window.location.href = "https://zerodha-clone-pi-mauve.vercel.app/login";  //redirect to login page 
+  window.location.href = `${FRONTEND_URL}/login `;  //redirect to login page 
 };
 
   const menuClass = "menu";

@@ -3,6 +3,7 @@ import axios from "axios";
 
 const Orders = () => {
   const [allOrders, setAllOrders] = useState([]);
+  const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:3002";
   
   
 
@@ -22,7 +23,7 @@ const Orders = () => {
     useEffect(() => {
     const token = localStorage.getItem("token"); // or sessionStorage
     axios
-      .get("http://localhost:3002/userOrders", {
+      .get(`${API_BASE_URL}/userOrders`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -40,7 +41,7 @@ const Orders = () => {
   const token = localStorage.getItem("token");
 
   axios
-    .delete(`http://localhost:3002/userOrders/${orderId}`, {
+    .delete(`${API_BASE_URL}/userOrders/${orderId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

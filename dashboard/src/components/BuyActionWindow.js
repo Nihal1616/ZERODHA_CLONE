@@ -6,16 +6,18 @@ import axios from "axios";
 import GeneralContext from "./GeneralContext";
 
 import "./BuyActionWindow.css";
+const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:3002";
 
 const BuyActionWindow = ({ uid }) => {
   const [stockQuantity, setStockQuantity] = useState(1);
   const [stockPrice, setStockPrice] = useState(0.0);
   const token = localStorage.getItem("token");
+  
 
   const handleBuyClick = () => {
     axios
     .post(
-      "http://localhost:3002/newOrder",
+      `${API_BASE_URL}/newOrder1`,
       {
         name: uid,
         qty: stockQuantity,
